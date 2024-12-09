@@ -1,0 +1,90 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPJYwSOAI8QuXDU7cZCv1mD",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/arjun123537/Code/blob/main/Task1%20hangman\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "7viL6w1nmO-p"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7Eza1Ebqi6Ez",
+        "outputId": "1696a271-4578-46f0-f74a-7683b41f4bd7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "stirix\n",
+            "['-', '-', '-', '-', '-', '-']\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "word=(\"arjun\",\"stirix\",\"apple\",\"toyato\",\"royal enfield\")\n",
+        "lives =6\n",
+        "choosen_word=random.choice(word)\n",
+        "print(choosen_word)\n",
+        "display=[]\n",
+        "for i in range(len(choosen_word)):\n",
+        "    display +='-'\n",
+        "print(display)\n",
+        "game_over=False\n",
+        "while not game_over:\n",
+        "    guessed_letter=input(\"guess the letter:\").lower()\n",
+        "    for position in range(len(choosen_word)):\n",
+        "        letter=choosen_word[position]\n",
+        "        if letter==guessed_letter:\n",
+        "            display[position]=guessed_letter\n",
+        "    print(display)\n",
+        "    if guessed_letter not in choosen_word:\n",
+        "        lives -=1\n",
+        "        if lives==0:\n",
+        "            game_over=True\n",
+        "            print(\"you lose!\")\n",
+        "    if '-' not in display:\n",
+        "        game_over=True\n",
+        "        print(\"you win!\")\n",
+        "    #print(hangman_stages.stages[lives])\n",
+        "\n",
+        "\n"
+      ]
+    }
+  ]
+}
